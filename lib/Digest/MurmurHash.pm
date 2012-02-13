@@ -5,7 +5,7 @@ use warnings;
 use base 'Exporter';
 
 our $VERSION = '0.11';
-our @EXPORT_OK = ('murmur_hash');
+our @EXPORT_OK = ('murmur_hash', 'murmurhash3_x86_32');
 
 require XSLoader;
 XSLoader::load('Digest::MurmurHash', $VERSION);
@@ -55,7 +55,7 @@ modules on an Intel Core2Duo 2.4GHz machine.
 For more information on the Murmur algorithm, visit Austin Appleby's
 algorithm description page:
 
-http://murmurhash.googlepages.com/
+http://code.google.com/p/smhasher/
 
 =head1 AUTHOR
 
