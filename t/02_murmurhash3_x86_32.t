@@ -4,7 +4,7 @@ use strict;
 ## trying to prove collision-free hashing
 use constant { ITERATIONS => 10000 };
 
-use Test::More tests => ITERATIONS*3 + 1;
+use Test::More tests => ITERATIONS*3 + 5;
 use Digest::MurmurHash qw(murmurhash3_x86_32);
 
 
@@ -27,3 +27,10 @@ for my $test_str ( keys %tests ) {
 
 
 is(scalar(keys %tests), scalar(keys %results), "All test strings hashed");
+
+is(murmurhash3_x86_32('',0), '', "Empty value makes empty result");
+is(murmurhash3_x86_32(undef,0), '', "Empty value makes empty result");
+is(length(murmurhash3_x86_32(0,0)), 4, "Zero value makes good result");
+
+no warnings;
+is(murmurhash3_x86_32(0,undef), murmurhash3_x86_32(0,0), "Undef seed acts same as 0");
