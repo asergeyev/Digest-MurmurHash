@@ -5,3 +5,9 @@ For more information on the algorithm itself, you can read the explanation
 at: http://code.google.com/p/smhasher/
 
 Toru Maesaka <dev@torum.net>
+
+
+I changed few things in this module, adding newest code from Austin Appleby's
+smhhasher project.
+
+Alex Sergeyev <asergeyev@dyn.com>

@@ -1,9 +1,16 @@
 Revision history for Perl extension Digest::MurmurHash.
 
-0.10  Sat Dec 27 00:36:04 2008
+0.12  Tue Feb 14 2012 Alex Sergeyev <asergeyev@dyn.com>
+	- Added support for murmurhash3 functions from latest codebase at http://code.google.com/p/smhasher/
+	- XS updated to return SV for old murmur_hash function, results will match
+
+0.11  Tue Feb 09 2009 Toru Maesaka <dev@torum.net>
+	-  
+
+0.10  Sat Dec 27 00:36:04 2008 Toru Maesaka <dev@torum.net>
 	- Initial Release of the Module
 
-0.01  Fri Dec 26 19:38:25 2008
+0.01  Fri Dec 26 19:38:25 2008 Toru Maesaka <dev@torum.net>
 	- original version; created by h2xs 1.23 with options
 		-A -n Digest::MurmurHash
 

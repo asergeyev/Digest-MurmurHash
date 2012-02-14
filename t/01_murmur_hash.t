@@ -1,33 +1,28 @@
 use warnings;
 use strict;
 
-use Test::More 'no_plan';
+## trying to prove collision-free hashing
+use constant { ITERATIONS => 10000 };
+
+use Test::More tests => ITERATIONS*2 + 1;
 use Digest::MurmurHash qw(murmur_hash);
 
-use constant { ITERATIONS => 20000 };
 
 sub randstr {
-    my ($len) = @_;
-    my @chars = ("a".."z", 'A'..'Z', '0'..'9');
-    my $buf = ""; 
-
-    foreach (1..$len) {
-        $buf .= $chars[rand @chars];
-    }
-    return $buf;
+    my $len = shift;
+    return join '', map { chr(int rand 256) } (0..$len);
 }
 
-my ($test_str, $i);
-my %results = ();
+my (%tests, %results);
 
-for ($i=0; $i<ITERATIONS; $i++) {
-    $test_str = randstr(7).$i;
-    $results{$test_str} = murmur_hash($test_str); 
+# perl rand should not give same sequence on 5-char strings but it can...
+$tests{randstr(5+int(rand 300))} = 1 while keys %tests < ITERATIONS;
+
+for my $test_str ( keys %tests ) {
+    my $hash = murmur_hash($test_str);
+    is(++$results{$hash}, 1, "Not colliding hash on 5+ byte string");
+    is(murmur_hash($test_str), $hash, "Consistent hash result");
 }
 
-is(keys(%results), ITERATIONS, "Collision Found");
 
-# Test for consistent result.
-for my $key (keys %results) {
-    is(murmur_hash($key), $results{$key}, "Inconsistent Hash");
-}
+is(scalar(keys %tests), scalar(keys %results), "All test strings hashed");
