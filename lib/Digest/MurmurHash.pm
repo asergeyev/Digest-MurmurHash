@@ -37,18 +37,8 @@ This module requires Perl version > 5.8
 
 =head1 BENCHMARK 
 
-Here is a comparison of this module between common hash function
-modules on an Intel Core2Duo 2.4GHz machine.
-
-  n = 10000000
-
-  murmur  :  ( 2.54 usr +  0.01 sys =  2.55 CPU ) @ 3921568.63/s
-  jenkins :  ( 2.89 usr +  0.01 sys =  2.90 CPU ) @ 3448275.86/s
-  pearson :  ( 2.99 usr +  0.01 sys =  3.00 CPU ) @ 3333333.33/s
-  fowler  :  ( 3.30 usr +  0.01 sys =  3.31 CPU ) @ 3021148.04/s
-  crc32   :  ( 3.86 usr +  0.00 sys =  3.86 CPU ) @ 2590673.58/s
-  md5     :  ( 7.12 usr +  0.01 sys =  7.13 CPU ) @ 1402524.54/s
-  sha1    :  ( 9.86 usr +  0.01 sys =  9.87 CPU ) @ 1013171.23/s
+See attached contrib/benchmark.pl to check speed on your own length of data.
+Real speeds may vary. Longer strings make murmurhash3_64 absolute leader.
 
 =head1 SEE ALSO
 
