@@ -5,7 +5,7 @@ use warnings;
 use base 'Exporter';
 
 our $VERSION = '0.12';
-our @EXPORT_OK = ('murmur_hash', 'murmurhash3_x86_32', 'murmurhash3_x86_128', 'murmurhash3_x64_128');
+our @EXPORT_OK = ('murmur_hash', 'murmurhash1', 'murmurhash3_x86_32', 'murmurhash3_x86_128', 'murmurhash3_x64_128');
 
 require XSLoader;
 XSLoader::load('Digest::MurmurHash', $VERSION);
