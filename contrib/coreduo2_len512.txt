@@ -1,0 +1,26 @@
+Benchmark: timing 10000000 iterations of crc32, fnv, jhash, md5, murmur, murmur1, murmur3_128, murmur3_32, murmur3_64_128, pearson, sha1, uuid...
+     crc32: 20.3587 wallclock secs (20.25 usr +  0.00 sys = 20.25 CPU) @ 493827.16/s (n=10000000)
+       fnv: 8.87747 wallclock secs ( 8.84 usr +  0.00 sys =  8.84 CPU) @ 1131221.72/s (n=10000000)
+     jhash: 9.90845 wallclock secs ( 9.87 usr +  0.00 sys =  9.87 CPU) @ 1013171.23/s (n=10000000)
+       md5: 21.089 wallclock secs (20.99 usr +  0.01 sys = 21.00 CPU) @ 476190.48/s (n=10000000)
+    murmur: 6.67509 wallclock secs ( 6.65 usr +  0.00 sys =  6.65 CPU) @ 1503759.40/s (n=10000000)
+   murmur1: 7.04723 wallclock secs ( 7.02 usr +  0.00 sys =  7.02 CPU) @ 1424501.42/s (n=10000000)
+murmur3_128: 5.50441 wallclock secs ( 5.48 usr +  0.00 sys =  5.48 CPU) @ 1824817.52/s (n=10000000)
+murmur3_32: 6.22348 wallclock secs ( 6.18 usr +  0.01 sys =  6.19 CPU) @ 1615508.89/s (n=10000000)
+murmur3_64_128: 5.01808 wallclock secs ( 5.00 usr +  0.00 sys =  5.00 CPU) @ 2000000.00/s (n=10000000)
+   pearson: 14.117 wallclock secs (14.06 usr +  0.00 sys = 14.06 CPU) @ 711237.55/s (n=10000000)
+      sha1: 48.4988 wallclock secs (48.15 usr +  0.00 sys = 48.15 CPU) @ 207684.32/s (n=10000000)
+      uuid: 42.4085 wallclock secs (14.45 usr + 27.58 sys = 42.03 CPU) @ 237925.29/s (n=10000000)
+	Rate
+sha1	207684/s
+uuid	237925/s
+md5	476190/s
+crc32	493827/s
+pearson	711238/s
+jhash	1013171/s
+fnv	1131222/s
+murmur1	1424501/s
+murmur	1503759/s
+murmur3_32	1615509/s
+murmur3_128	1824818/s
+murmur3_64_128	2000000/s

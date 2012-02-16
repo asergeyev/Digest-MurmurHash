@@ -1,5 +1,9 @@
 #!/usr/bin/perl -w
 
+
+## DISCLAIMER: benchmarking is not performance report and cannot
+## replace profiling!
+
 use warnings;
 use strict;
 
@@ -13,10 +17,11 @@ use Digest::FNV;
 use UUID;
 use Benchmark ':hireswallclock';
 
-my $len = 32;
+my $len = shift || 32;
 my $teststring = join '', map { chr(int rand 256) } (0..$len);
 
 my $murmur = sub { return Digest::MurmurHash::murmur_hash($teststring) };
+my $murmur1 = sub { return Digest::MurmurHash::murmurhash1($teststring,0) };
 my $murmur3_32 = sub { return Digest::MurmurHash::murmurhash3_x86_32($teststring,0) };
 my $murmur3_128 = sub { return Digest::MurmurHash::murmurhash3_x86_128($teststring,0) };
 my $murmur3_64_128 = sub { return Digest::MurmurHash::murmurhash3_x64_128($teststring,0) };
@@ -31,6 +36,7 @@ my $uuid = sub { return UUID::generate($teststring) };
 
 my $results = Benchmark::timethese(10000000, {
 	murmur => $murmur,
+	murmur1 => $murmur1,
 	murmur3_32 => $murmur3_32,
 	murmur3_128 => $murmur3_128,
 	murmur3_64_128 => $murmur3_64_128,
