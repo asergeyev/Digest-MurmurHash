@@ -1,13 +1,15 @@
 This is the Perl XS module for the Murmur algorithm by Austin Appleby.
 See the documentation within the module for details.
 
-For more information on the algorithm itself, you can read the explanation
-at: http://code.google.com/p/smhasher/
+Here's the official explanation of the algorithm.
 
-Toru Maesaka <dev@torum.net>
+  - http://code.google.com/p/smhasher/w/list
+  - http://murmurhash.googlepages.com/ (deprecated)
+
+-- Toru Maesaka <dev@torum.net>
 
 
 I changed few things in this module, adding newest code from Austin Appleby's
 smhhasher project.
 
-Alex Sergeyev <asergeyev@dyn.com>
+-- Alex Sergeyev <asergeyev@dyn.com>

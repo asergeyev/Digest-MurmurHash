@@ -13,15 +13,9 @@
 #include "MurmurHash1.cpp"
 #include "MurmurHash3.cpp"
 
-// U32
-// murmur_hash(char *data, size_t len) {
-// return MurmurHash1(data, len, 0);
-// } 
-
 MODULE = Digest::MurmurHash	PACKAGE = Digest::MurmurHash
 
 PROTOTYPES: ENABLE
-
 
 SV*
 murmur_hash(sv)

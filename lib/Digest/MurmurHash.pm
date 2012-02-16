@@ -46,10 +46,11 @@ For more information on the Murmur algorithm, visit Austin Appleby's
 algorithm description page:
 
 http://code.google.com/p/smhasher/
+http://murmurhash.googlepages.com/ (deprecated)
 
 =head1 AUTHOR
 
-Toru Maesaka, E<lt>dev@torum.netE<gt>
+Toru Maesaka E<lt>toru@tmaesaka.comE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
@@ -64,4 +65,3 @@ it under the same terms as Perl itself, either Perl version 5.8.8 or,
 at your option, any later version of Perl 5 you may have available.
 
 =cut
-
