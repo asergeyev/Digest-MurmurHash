@@ -10,6 +10,18 @@ our @EXPORT_OK = ('murmur_hash', 'murmurhash1', 'murmurhash3_x86_32', 'murmurhas
 require XSLoader;
 XSLoader::load('Digest::MurmurHash', $VERSION);
 
+
+use base 'Digest::base';
+
+sub new { return bless [], $_[0] };
+sub clone { my $self = shift; return bless [ $self->[0] ], ref($self) };
+sub add { my $self = shift; $self->[0] .= join '', @_ };
+sub digest { my $self = shift; return murmurhash3_x86_128($self->[0], 0) };
+
+
+
+
+
 1;
 __END__
 
