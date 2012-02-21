@@ -13,6 +13,7 @@ README
 META.yml                                 Module meta-data (added by MakeMaker)
 t/00_load.t
 t/01_murmur_hash.t
-t/02_murmurhash3_x86_32.t
-t/03_murmurhash3_x86_128.t
-t/04_murmurhash3_x64_128.t
+t/02_murmurhash1.t
+t/03_murmurhash3_x86_32.t
+t/04_murmurhash3_x86_128.t
+t/05_murmurhash3_x64_128.t
