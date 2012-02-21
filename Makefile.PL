@@ -5,7 +5,7 @@ $CC = 'g++';
 WriteMakefile(
     NAME              => 'Digest::MurmurHash',
     VERSION_FROM      => 'lib/Digest/MurmurHash.pm', # finds $VERSION
-    PREREQ_PM         => {}, # e.g., Module::Name => 1.1
+    PREREQ_PM         => { Digest::base => 1.16 }, # e.g., Module::Name => 1.1
     CC                => $CC,
     LD                => '$(CC)',
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
