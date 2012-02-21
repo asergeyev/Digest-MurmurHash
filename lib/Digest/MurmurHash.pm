@@ -3,6 +3,7 @@ package Digest::MurmurHash;
 use strict;
 use warnings;
 use base 'Exporter';
+use base 'Digest::base';
 
 our $VERSION = '0.12';
 our @EXPORT_OK = ('murmur_hash', 'murmurhash1', 'murmurhash3_x86_32', 'murmurhash3_x86_128', 'murmurhash3_x64_128');
@@ -10,8 +11,6 @@ our @EXPORT_OK = ('murmur_hash', 'murmurhash1', 'murmurhash3_x86_32', 'murmurhas
 require XSLoader;
 XSLoader::load('Digest::MurmurHash', $VERSION);
 
-
-use base 'Digest::base';
 
 sub new { return bless [], $_[0] };
 sub clone { my $self = shift; return bless [ $self->[0] ], ref($self) };
